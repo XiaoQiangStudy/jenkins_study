@@ -1,10 +1,10 @@
+export BUILD_ID=dontKillMe
 mkdir -p webroot
 if [ -a "webroot/demo.pid" ]; then
 pid=$(cat webroot/demo.pid)
-existpid=$(ps aux | awk '{print $2}'| grep -w $pid)
-echo "获得PID=$pid, 运行中PID=$existpid"
+echo "获得PID=$pid"
 fi
-if [[ $existpid != "" ]]; then
+if [[ $(ps aux | awk '{print $2}'| grep -w $pid) != "" ]]; then
 kill -9 $pid
 echo "目标 $pid 进程存在，已删除之"
 fi
