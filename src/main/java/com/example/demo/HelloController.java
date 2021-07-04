@@ -9,6 +9,6 @@ public class HelloController {
     @ResponseBody
     @RequestMapping(path = "/hello")
     public String hello(){
-        return "这是第一次使用 webhook 调用 Jenkins！";
+        return "这是第2次使用 webhook 调用 Jenkins！";
     }
 }
